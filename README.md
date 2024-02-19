@@ -14,6 +14,8 @@ Create an environment containing these:
 
 ### Get data
 
+Since the fastq files are generally huge (over 25MB even after compressing, I've added the code to extract the files from SRA for a sample)
+
    ```bash
    mkdir raw_data
    fasterq-dump \
