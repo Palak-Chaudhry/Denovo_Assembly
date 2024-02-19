@@ -23,6 +23,7 @@ quality threshold: $params.quality_threshold
 
 process READTRIM {
     publishDir "$params.outdir/trim/", mode: 'copy', overwrite: true
+    container "quay.io/biocontainers/fastp:0.23.3--h5f740d0_0"
 
     input:
     tuple val(sample), path(reads)
@@ -38,6 +39,7 @@ process READTRIM {
 
 process READASSEMBLY {
     publishDir "$params.outdir/asm/", mode: 'copy', overwrite: true
+    container "quay.io/biocontainers/skesa:2.5.1--hdcf5f25_0"
 
     input:
     tuple val(sample), path(reads)

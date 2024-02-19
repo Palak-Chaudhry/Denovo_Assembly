@@ -3,28 +3,10 @@
 ## Description
 This Nextflow pipeline performs read trimming using Fastp and subsequent assembly using Skesa. The pipeline takes raw paired-end fastq files as input, trims them based on the specified quality threshold using Fastp, and then assembles the trimmed reads using Skesa. The results are organized and stored in the specified output directory.
 
-## Usage
-
-### Prerequisites
-
-Create an environment containing these:
-- [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html#installation)
-- [Fastp](https://github.com/OpenGene/fastp)
-- [Skesa](https://github.com/ncbi/SKESA)
-
 ### Get data
 
-Since the fastq files are generally huge (over 25MB even after compressing, I am not uploading these in the repo.) I've added the code to extract the files from SRA for a sample.
+You can find the data in the `raw_data` folder. This is just a small sample paired end read from WGS of Acinetobacter Scipio phage.
 
-   ```bash
-   mkdir raw_data
-   fasterq-dump \
-    SRR15276224 
-    --threads 1 \
-    --outdir ./raw_data \
-    --split-files \
-    --skip-technical
-   ```
 ### Running the Pipeline
 
 1. Clone the repository:
