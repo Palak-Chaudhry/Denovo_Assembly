@@ -12,6 +12,17 @@ Create an environment containing these:
 - [Fastp](https://github.com/OpenGene/fastp)
 - [Skesa](https://github.com/ncbi/SKESA)
 
+### Get data
+
+   ```bash
+   mkdir raw_data
+   fasterq-dump \
+    SRR15276224 
+    --threads 1 \
+    --outdir ./raw_data \
+    --split-files \
+    --skip-technical
+   ```
 ### Running the Pipeline
 
 1. Clone the repository:
